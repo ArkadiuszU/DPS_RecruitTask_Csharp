@@ -10,9 +10,10 @@ namespace ContractorCRUDapp.Entities
     {
         public int Id { get; set; }
         public string Name { get; set;}
-        public int NipNimber { get; set; }
-        public int ContractorTypeID { get; set; }
+        public string NipNumber { get; set; }
+        public int ContractorTypeId { get; set; }
         public string Details { get; set; }
-        public bool Active { get; set; }
+        public bool IsActive { get; set; }
+        public virtual ContractorType ContractorType { get; set; }
     }
 }

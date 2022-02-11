@@ -9,16 +9,16 @@ namespace ContractorCRUDapp
 {
     public class CrudService : ICrudService
     {
+        private readonly ApplicationDbContext _appDbContext;
+        
+        public CrudService(ApplicationDbContext applicationDbContext)
+        {
+            _appDbContext = applicationDbContext;
+        }
+
         public IEnumerable<Contractor> GetAllContractors()
         {
-            IEnumerable <Contractor> list = new List<Contractor> { 
-            
-                new Contractor{ Name = "TestName" },
-                new Contractor{ },
-                new Contractor{ },
-            };
-
-            return list; 
+            return _appDbContext.Contractors.ToArray(); 
         }
     }
 }

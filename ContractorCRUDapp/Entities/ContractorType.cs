@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ContractorCRUDapp.Entities
 {
-    class ContractorType
+    public class ContractorType
     {
         public int Id { get; set; }
         public string Type { get; set; }
