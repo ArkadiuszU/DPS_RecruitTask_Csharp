@@ -12,8 +12,10 @@ namespace ContractorCRUDapp
 {
     public partial class MainWindow : Form
     {
-        public MainWindow()
+        private ICrudService _crudService;
+        public MainWindow(ICrudService crudServices)
         {
+            _crudService = crudServices;
             InitializeComponent();
         }
 
@@ -21,6 +23,11 @@ namespace ContractorCRUDapp
         {
             AddEditWindow form = new AddEditWindow();
             form.ShowDialog(this);
+    
+            this.title_lb.Text = _crudService.GetAllContractors().First().Name;
+
+
+
         }
 
         private void edit_button_Click(object sender, EventArgs e)
