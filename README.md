@@ -1,14 +1,16 @@
-Zadanie z .NET
-Napisaæ aplikacjê w C# w WinForms, która umo¿liwia:
-• Wyœwietlanie listy kontrahentów. Okno powinno zawieraæ tabelê z dwoma kolumnami (Nazwa
+Zadanie z .NET <br />
+NapisaÄ‡ aplikacjÄ™ w C# w WinForms, ktÃ³ra umoÅ¼liwia: <br />
+â€¢ WyÅ›wietlanie listy kontrahentÃ³w. Okno powinno zawieraÄ‡ tabelÄ™ z dwoma kolumnami (Nazwa
 kontrahenta, NIP) oraz dwa przyciski do tworzenia nowego kontrahenta oraz edycji danych
-zaznaczonego kontrahenta w tabeli.
-• Dodawanie nowego kontrahenta do bazy danych.
-• Edytowanie danych kontrahenta, który zosta³ zaznaczony w tabeli.
-• W oknie dodawania i edytowania kontrahenta powinny znajdowaæ siê nastêpuj¹ce kontrolki:
-• Nazwa kontrahenta – pole testowe przyjmuj¹ce maksymalnie 50 znaków.
-• Nip – pole testowe przyjmuj¹ce dok³adnie 10 znaków.
-• Typ kontrahenta – combobox zawieraj¹cy dwa wpisy: klient, potencjalny klient.
-Wartoœci do comboboxa powinny byæ pobierane z bazy danych.
-• Opis firmy – pole testowe przyjmuj¹ce maksymalnie 500 znaków.
-• Kontrahent aktywny – checkbox, domyœlnie zaznaczony przy dodawaniu kontrahenta.
+zaznaczonego kontrahenta w tabeli. <br />
+â€¢ Dodawanie nowego kontrahenta do bazy danych. <br />
+â€¢ Edytowanie danych kontrahenta, ktÃ³ry zostaÅ‚ zaznaczony w tabeli. <br />
+â€¢ W oknie dodawania i edytowania kontrahenta powinny znajdowaÄ‡ siÄ™ nastÄ™pujÄ…ce kontrolki: <br /> <br />
+â€¢ Nazwa kontrahenta â€“ pole testowe przyjmujÄ…ce maksymalnie 50 znakÃ³w. <br />
+â€¢ Nip â€“ pole testowe przyjmujÄ…ce dokÅ‚adnie 10 znakÃ³w. <br />
+â€¢ Typ kontrahenta â€“ combobox zawierajÄ…cy dwa wpisy: klient, potencjalny klient. <br />
+WartoÅ›ci do comboboxa powinny byÄ‡ pobierane z bazy danych. 
+â€¢ Opis firmy â€“ pole testowe przyjmujÄ…ce maksymalnie 500 znakÃ³w. <br />
+â€¢ Kontrahent aktywny â€“ checkbox, domyÅ›lnie zaznaczony przy dodawaniu kontrahenta. <br />
+
+
