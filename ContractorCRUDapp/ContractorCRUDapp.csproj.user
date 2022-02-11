@@ -4,6 +4,9 @@
     <Compile Update="AddEditWindow.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ContractorUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
