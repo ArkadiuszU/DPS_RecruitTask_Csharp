@@ -10,12 +10,17 @@ using System.Windows.Forms;
 
 namespace ContractorCRUDapp
 {
-    public partial class Form1 : Form
+    public partial class AddEditWindow : Form
     {
-        public Form1()
+        public AddEditWindow()
         {
             InitializeComponent();
+          
         }
 
+        private void confirm_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
