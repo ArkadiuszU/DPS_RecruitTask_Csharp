@@ -46,45 +46,45 @@ namespace ContractorCRUDapp
             // name_lb
             // 
             this.name_lb.AutoSize = true;
-            this.name_lb.Location = new System.Drawing.Point(56, 132);
+            this.name_lb.Location = new System.Drawing.Point(64, 176);
             this.name_lb.Name = "name_lb";
-            this.name_lb.Size = new System.Drawing.Size(112, 15);
+            this.name_lb.Size = new System.Drawing.Size(140, 20);
             this.name_lb.TabIndex = 0;
             this.name_lb.Text = "Nazwa kontrahenta:";
             // 
             // nipNumber_lb
             // 
             this.nipNumber_lb.AutoSize = true;
-            this.nipNumber_lb.Location = new System.Drawing.Point(56, 162);
+            this.nipNumber_lb.Location = new System.Drawing.Point(64, 216);
             this.nipNumber_lb.Name = "nipNumber_lb";
-            this.nipNumber_lb.Size = new System.Drawing.Size(26, 15);
+            this.nipNumber_lb.Size = new System.Drawing.Size(32, 20);
             this.nipNumber_lb.TabIndex = 1;
             this.nipNumber_lb.Text = "NIP";
             // 
             // type_lb
             // 
             this.type_lb.AutoSize = true;
-            this.type_lb.Location = new System.Drawing.Point(56, 195);
+            this.type_lb.Location = new System.Drawing.Point(64, 260);
             this.type_lb.Name = "type_lb";
-            this.type_lb.Size = new System.Drawing.Size(96, 15);
+            this.type_lb.Size = new System.Drawing.Size(118, 20);
             this.type_lb.TabIndex = 2;
             this.type_lb.Text = "Typ kontrahenta:";
             // 
             // details_lb
             // 
             this.details_lb.AutoSize = true;
-            this.details_lb.Location = new System.Drawing.Point(56, 233);
+            this.details_lb.Location = new System.Drawing.Point(64, 311);
             this.details_lb.Name = "details_lb";
-            this.details_lb.Size = new System.Drawing.Size(65, 15);
+            this.details_lb.Size = new System.Drawing.Size(80, 20);
             this.details_lb.TabIndex = 3;
             this.details_lb.Text = "Opis firmy:";
             // 
             // active_lb
             // 
             this.active_lb.AutoSize = true;
-            this.active_lb.Location = new System.Drawing.Point(56, 328);
+            this.active_lb.Location = new System.Drawing.Point(64, 437);
             this.active_lb.Name = "active_lb";
-            this.active_lb.Size = new System.Drawing.Size(112, 15);
+            this.active_lb.Size = new System.Drawing.Size(138, 20);
             this.active_lb.TabIndex = 4;
             this.active_lb.Text = "Kontrakent aktywny";
             // 
@@ -92,17 +92,18 @@ namespace ContractorCRUDapp
             // 
             this.title_lb.AutoSize = true;
             this.title_lb.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.title_lb.Location = new System.Drawing.Point(56, 19);
+            this.title_lb.Location = new System.Drawing.Point(64, 25);
             this.title_lb.Name = "title_lb";
-            this.title_lb.Size = new System.Drawing.Size(238, 25);
+            this.title_lb.Size = new System.Drawing.Size(303, 32);
             this.title_lb.TabIndex = 5;
             this.title_lb.Text = "Dodaj / edytuj kontrahenta";
             // 
             // confirm_button
             // 
-            this.confirm_button.Location = new System.Drawing.Point(713, 415);
+            this.confirm_button.Location = new System.Drawing.Point(815, 553);
+            this.confirm_button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.confirm_button.Name = "confirm_button";
-            this.confirm_button.Size = new System.Drawing.Size(75, 23);
+            this.confirm_button.Size = new System.Drawing.Size(86, 31);
             this.confirm_button.TabIndex = 6;
             this.confirm_button.Text = "Zatwierdź";
             this.confirm_button.UseVisualStyleBackColor = true;
@@ -110,48 +111,54 @@ namespace ContractorCRUDapp
             // 
             // name_textBox
             // 
-            this.name_textBox.Location = new System.Drawing.Point(185, 124);
+            this.name_textBox.Location = new System.Drawing.Point(211, 165);
+            this.name_textBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.name_textBox.Name = "name_textBox";
-            this.name_textBox.Size = new System.Drawing.Size(269, 23);
+            this.name_textBox.Size = new System.Drawing.Size(307, 27);
             this.name_textBox.TabIndex = 7;
             // 
             // nipNumber_textBox
             // 
-            this.nipNumber_textBox.Location = new System.Drawing.Point(185, 159);
+            this.nipNumber_textBox.Location = new System.Drawing.Point(211, 212);
+            this.nipNumber_textBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.nipNumber_textBox.Name = "nipNumber_textBox";
-            this.nipNumber_textBox.Size = new System.Drawing.Size(269, 23);
+            this.nipNumber_textBox.Size = new System.Drawing.Size(307, 27);
             this.nipNumber_textBox.TabIndex = 8;
             // 
             // details_textBox
             // 
-            this.details_textBox.Location = new System.Drawing.Point(185, 233);
+            this.details_textBox.Location = new System.Drawing.Point(211, 311);
+            this.details_textBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.details_textBox.Multiline = true;
             this.details_textBox.Name = "details_textBox";
-            this.details_textBox.Size = new System.Drawing.Size(269, 75);
+            this.details_textBox.Size = new System.Drawing.Size(307, 99);
             this.details_textBox.TabIndex = 9;
             // 
             // active_checkBox
             // 
             this.active_checkBox.AutoSize = true;
-            this.active_checkBox.Location = new System.Drawing.Point(185, 328);
+            this.active_checkBox.Location = new System.Drawing.Point(211, 437);
+            this.active_checkBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.active_checkBox.Name = "active_checkBox";
-            this.active_checkBox.Size = new System.Drawing.Size(15, 14);
+            this.active_checkBox.Size = new System.Drawing.Size(18, 17);
             this.active_checkBox.TabIndex = 10;
             this.active_checkBox.UseVisualStyleBackColor = true;
             // 
             // type_comboBox
             // 
+            this.type_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.type_comboBox.FormattingEnabled = true;
-            this.type_comboBox.Location = new System.Drawing.Point(185, 195);
+            this.type_comboBox.Location = new System.Drawing.Point(211, 260);
+            this.type_comboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.type_comboBox.Name = "type_comboBox";
-            this.type_comboBox.Size = new System.Drawing.Size(269, 23);
+            this.type_comboBox.Size = new System.Drawing.Size(307, 28);
             this.type_comboBox.TabIndex = 11;
             // 
             // AddEditWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(914, 600);
             this.Controls.Add(this.type_comboBox);
             this.Controls.Add(this.active_checkBox);
             this.Controls.Add(this.details_textBox);
@@ -164,8 +171,11 @@ namespace ContractorCRUDapp
             this.Controls.Add(this.type_lb);
             this.Controls.Add(this.nipNumber_lb);
             this.Controls.Add(this.name_lb);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AddEditWindow";
             this.Text = "AddEditWindow";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddEditWindow_FormClosed);
+            this.Load += new System.EventHandler(this.AddEditWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

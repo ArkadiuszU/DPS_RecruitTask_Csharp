@@ -33,6 +33,7 @@ namespace ContractorCRUDapp
             this.add_button = new System.Windows.Forms.Button();
             this.edit_button = new System.Windows.Forms.Button();
             this.table_panel = new System.Windows.Forms.Panel();
+            this.delete_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // title_lb
@@ -58,6 +59,7 @@ namespace ContractorCRUDapp
             // 
             // edit_button
             // 
+            this.edit_button.Enabled = false;
             this.edit_button.Location = new System.Drawing.Point(109, 56);
             this.edit_button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.edit_button.Name = "edit_button";
@@ -69,17 +71,30 @@ namespace ContractorCRUDapp
             // 
             // table_panel
             // 
+            this.table_panel.AutoScroll = true;
             this.table_panel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.table_panel.Location = new System.Drawing.Point(152, 185);
             this.table_panel.Name = "table_panel";
             this.table_panel.Size = new System.Drawing.Size(621, 235);
             this.table_panel.TabIndex = 3;
             // 
+            // delete_button
+            // 
+            this.delete_button.Enabled = false;
+            this.delete_button.Location = new System.Drawing.Point(201, 58);
+            this.delete_button.Name = "delete_button";
+            this.delete_button.Size = new System.Drawing.Size(94, 29);
+            this.delete_button.TabIndex = 13;
+            this.delete_button.Text = "Usuń";
+            this.delete_button.UseVisualStyleBackColor = true;
+            this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 600);
+            this.Controls.Add(this.delete_button);
             this.Controls.Add(this.table_panel);
             this.Controls.Add(this.edit_button);
             this.Controls.Add(this.add_button);
@@ -99,6 +114,7 @@ namespace ContractorCRUDapp
         private System.Windows.Forms.Button add_button;
         private System.Windows.Forms.Button edit_button;
         private System.Windows.Forms.Panel table_panel;
+        private System.Windows.Forms.Button delete_button;
     }
 }
 

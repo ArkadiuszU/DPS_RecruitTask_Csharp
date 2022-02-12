@@ -11,9 +11,9 @@ namespace ContractorCRUDapp.Entities
         public int Id { get; set; }
         public string Name { get; set;}
         public string NipNumber { get; set; }
-        public int ContractorTypeId { get; set; }
+        public int ContractorTypeId { get; set; } = 1; 
         public string Details { get; set; }
-        public bool IsActive { get; set; }
+        public bool IsActive { get; set; } = true ;
         public virtual ContractorType ContractorType { get; set; }
     }
 }
