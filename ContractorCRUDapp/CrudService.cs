@@ -60,5 +60,10 @@ namespace ContractorCRUDapp
             _appDbContext.SaveChanges();
             return true;
         }
+
+        public string GetContractorTypeById(int id)
+        {
+           return _appDbContext.ContractorTypes.FirstOrDefault(c => c.Id == id).Type;
+        }
     }
 }

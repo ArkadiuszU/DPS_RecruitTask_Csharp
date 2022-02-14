@@ -20,15 +20,15 @@ namespace ContractorCRUDapp
             InitializeComponent();
             this.labelName.Text = contractor.Name;
             this.labelNip.Text = contractor.NipNumber;
-            this.labelDetails.Text = contractor.Details;
+            this.labelType.Text = contractor.ContractorType.Type;
+          
             //this.labelType.Text = contractor.ContractorType.Type;
-            this.labelActive.Text = (contractor.IsActive)? "Aktywny" : "Nieaktywny" ;
+            this.IsActivepanel.BackColor = (contractor.IsActive)? Color.Green : Color.Gray ;
 
             _messageTarget = messageTarget;
             _contractorId = contractor.Id;
-        }
 
-  
+        }
 
         private void ContractorUserControl_MouseEnter(object sender, EventArgs e)
         {
@@ -45,5 +45,7 @@ namespace ContractorCRUDapp
         {
             _messageTarget(_contractorId);
         }
+
+
     }
 }

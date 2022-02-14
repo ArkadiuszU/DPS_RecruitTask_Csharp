@@ -12,6 +12,8 @@ namespace ContractorCRUDapp
         public IEnumerable<Contractor> GetAllContractors();
 
         public Contractor GetContractorById(int id);
+
+        public string GetContractorTypeById(int id);
         public bool DeleteContractorById(int id);
         public IEnumerable<ContractorType> GetContractorTypes();
 

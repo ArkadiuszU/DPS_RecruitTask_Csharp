@@ -41,12 +41,15 @@ namespace ContractorCRUDapp
             this.details_textBox = new System.Windows.Forms.TextBox();
             this.active_checkBox = new System.Windows.Forms.CheckBox();
             this.type_comboBox = new System.Windows.Forms.ComboBox();
+            this.error1_lb = new System.Windows.Forms.Label();
+            this.error2_lb = new System.Windows.Forms.Label();
+            this.error3_lb = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // name_lb
             // 
             this.name_lb.AutoSize = true;
-            this.name_lb.Location = new System.Drawing.Point(64, 176);
+            this.name_lb.Location = new System.Drawing.Point(65, 115);
             this.name_lb.Name = "name_lb";
             this.name_lb.Size = new System.Drawing.Size(140, 20);
             this.name_lb.TabIndex = 0;
@@ -55,11 +58,11 @@ namespace ContractorCRUDapp
             // nipNumber_lb
             // 
             this.nipNumber_lb.AutoSize = true;
-            this.nipNumber_lb.Location = new System.Drawing.Point(64, 216);
+            this.nipNumber_lb.Location = new System.Drawing.Point(65, 185);
             this.nipNumber_lb.Name = "nipNumber_lb";
-            this.nipNumber_lb.Size = new System.Drawing.Size(32, 20);
+            this.nipNumber_lb.Size = new System.Drawing.Size(35, 20);
             this.nipNumber_lb.TabIndex = 1;
-            this.nipNumber_lb.Text = "NIP";
+            this.nipNumber_lb.Text = "NIP:";
             // 
             // type_lb
             // 
@@ -73,7 +76,7 @@ namespace ContractorCRUDapp
             // details_lb
             // 
             this.details_lb.AutoSize = true;
-            this.details_lb.Location = new System.Drawing.Point(64, 311);
+            this.details_lb.Location = new System.Drawing.Point(65, 311);
             this.details_lb.Name = "details_lb";
             this.details_lb.Size = new System.Drawing.Size(80, 20);
             this.details_lb.TabIndex = 3;
@@ -82,7 +85,7 @@ namespace ContractorCRUDapp
             // active_lb
             // 
             this.active_lb.AutoSize = true;
-            this.active_lb.Location = new System.Drawing.Point(64, 437);
+            this.active_lb.Location = new System.Drawing.Point(64, 457);
             this.active_lb.Name = "active_lb";
             this.active_lb.Size = new System.Drawing.Size(138, 20);
             this.active_lb.TabIndex = 4;
@@ -100,7 +103,7 @@ namespace ContractorCRUDapp
             // 
             // confirm_button
             // 
-            this.confirm_button.Location = new System.Drawing.Point(815, 553);
+            this.confirm_button.Location = new System.Drawing.Point(654, 534);
             this.confirm_button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.confirm_button.Name = "confirm_button";
             this.confirm_button.Size = new System.Drawing.Size(86, 31);
@@ -111,36 +114,48 @@ namespace ContractorCRUDapp
             // 
             // name_textBox
             // 
-            this.name_textBox.Location = new System.Drawing.Point(211, 165);
+            this.name_textBox.Location = new System.Drawing.Point(211, 108);
             this.name_textBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.name_textBox.MaxLength = 50;
             this.name_textBox.Name = "name_textBox";
-            this.name_textBox.Size = new System.Drawing.Size(307, 27);
+            this.name_textBox.Size = new System.Drawing.Size(340, 27);
             this.name_textBox.TabIndex = 7;
+            this.name_textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.name_textBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
+            this.name_textBox.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // nipNumber_textBox
             // 
-            this.nipNumber_textBox.Location = new System.Drawing.Point(211, 212);
+            this.nipNumber_textBox.Location = new System.Drawing.Point(211, 185);
             this.nipNumber_textBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.nipNumber_textBox.MaxLength = 10;
             this.nipNumber_textBox.Name = "nipNumber_textBox";
-            this.nipNumber_textBox.Size = new System.Drawing.Size(307, 27);
+            this.nipNumber_textBox.Size = new System.Drawing.Size(340, 27);
             this.nipNumber_textBox.TabIndex = 8;
+            this.nipNumber_textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.nipNumber_textBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
+            this.nipNumber_textBox.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // details_textBox
             // 
             this.details_textBox.Location = new System.Drawing.Point(211, 311);
             this.details_textBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.details_textBox.MaxLength = 500;
             this.details_textBox.Multiline = true;
             this.details_textBox.Name = "details_textBox";
-            this.details_textBox.Size = new System.Drawing.Size(307, 99);
+            this.details_textBox.Size = new System.Drawing.Size(340, 99);
             this.details_textBox.TabIndex = 9;
+            this.details_textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.details_textBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
+            this.details_textBox.Leave += new System.EventHandler(this.textBox_Leave);
             // 
             // active_checkBox
             // 
             this.active_checkBox.AutoSize = true;
-            this.active_checkBox.Location = new System.Drawing.Point(211, 437);
+            this.active_checkBox.Location = new System.Drawing.Point(211, 457);
             this.active_checkBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.active_checkBox.Name = "active_checkBox";
-            this.active_checkBox.Size = new System.Drawing.Size(18, 17);
+            this.active_checkBox.Size = new System.Drawing.Size(15, 14);
             this.active_checkBox.TabIndex = 10;
             this.active_checkBox.UseVisualStyleBackColor = true;
             // 
@@ -148,17 +163,56 @@ namespace ContractorCRUDapp
             // 
             this.type_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.type_comboBox.FormattingEnabled = true;
-            this.type_comboBox.Location = new System.Drawing.Point(211, 260);
+            this.type_comboBox.Location = new System.Drawing.Point(211, 257);
             this.type_comboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.type_comboBox.Name = "type_comboBox";
-            this.type_comboBox.Size = new System.Drawing.Size(307, 28);
+            this.type_comboBox.Size = new System.Drawing.Size(340, 28);
             this.type_comboBox.TabIndex = 11;
+            // 
+            // error1_lb
+            // 
+            this.error1_lb.AutoSize = true;
+            this.error1_lb.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.error1_lb.ForeColor = System.Drawing.Color.Red;
+            this.error1_lb.Location = new System.Drawing.Point(211, 139);
+            this.error1_lb.Name = "error1_lb";
+            this.error1_lb.Size = new System.Drawing.Size(401, 17);
+            this.error1_lb.TabIndex = 12;
+            this.error1_lb.Text = "pole nie moze pozostac puste i może mieć maksymalnie 50 znaków";
+            this.error1_lb.Visible = false;
+            // 
+            // error2_lb
+            // 
+            this.error2_lb.AutoSize = true;
+            this.error2_lb.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.error2_lb.ForeColor = System.Drawing.Color.Red;
+            this.error2_lb.Location = new System.Drawing.Point(211, 216);
+            this.error2_lb.Name = "error2_lb";
+            this.error2_lb.Size = new System.Drawing.Size(222, 17);
+            this.error2_lb.TabIndex = 13;
+            this.error2_lb.Text = "pole musi mieć dokładnie 10 znaków";
+            this.error2_lb.Visible = false;
+            // 
+            // error3_lb
+            // 
+            this.error3_lb.AutoSize = true;
+            this.error3_lb.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.error3_lb.ForeColor = System.Drawing.Color.Red;
+            this.error3_lb.Location = new System.Drawing.Point(211, 413);
+            this.error3_lb.Name = "error3_lb";
+            this.error3_lb.Size = new System.Drawing.Size(408, 17);
+            this.error3_lb.TabIndex = 14;
+            this.error3_lb.Text = "pole nie moze pozostac puste i może mieć maksymalnie 500 znaków";
+            this.error3_lb.Visible = false;
             // 
             // AddEditWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 600);
+            this.ClientSize = new System.Drawing.Size(785, 584);
+            this.Controls.Add(this.error3_lb);
+            this.Controls.Add(this.error2_lb);
+            this.Controls.Add(this.error1_lb);
             this.Controls.Add(this.type_comboBox);
             this.Controls.Add(this.active_checkBox);
             this.Controls.Add(this.details_textBox);
@@ -195,5 +249,8 @@ namespace ContractorCRUDapp
         private System.Windows.Forms.TextBox details_textBox;
         private System.Windows.Forms.CheckBox active_checkBox;
         private System.Windows.Forms.ComboBox type_comboBox;
+        private System.Windows.Forms.Label error1_lb;
+        private System.Windows.Forms.Label error2_lb;
+        private System.Windows.Forms.Label error3_lb;
     }
 }

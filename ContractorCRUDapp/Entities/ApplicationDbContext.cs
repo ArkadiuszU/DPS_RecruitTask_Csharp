@@ -31,8 +31,8 @@ namespace ContractorCRUDapp.Entities
 
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
-            dbContextOptionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=ContracentsDb;Trusted_Connection=True;");
-            
+            //dbContextOptionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=ContracentsDb;Trusted_Connection=True;");
+            dbContextOptionsBuilder.UseSqlServer("Server = tcp:auapp.database.windows.net,1433; Initial Catalog = auappbase; Persist Security Info = False; User ID = dpsSoftwareTester; Password = dpsSoftware1234; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;"); 
         }
     }
 }

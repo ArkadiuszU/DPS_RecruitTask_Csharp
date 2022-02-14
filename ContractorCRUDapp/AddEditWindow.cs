@@ -14,7 +14,6 @@ namespace ContractorCRUDapp
     public enum WindowType { Add, Edit};
     public partial class AddEditWindow : Form
     {
-
         private ICrudService _crudService;
         private Contractor _contractor;
         private WindowType _windowType;
@@ -36,18 +35,34 @@ namespace ContractorCRUDapp
             _contractor.IsActive = this.active_checkBox.Checked;
             _contractor.ContractorTypeId = this.type_comboBox.SelectedIndex + 1 ;
 
-            if(_windowType == WindowType.Add)
+
+            if (String.IsNullOrEmpty(_contractor.Name) || (_contractor.NipNumber.Length != 10))
             {
-                if (_crudService.AddContractor(_contractor))
-                {
-                    this.Close();
-                }
+                this.error1_lb.Visible = (String.IsNullOrEmpty(_contractor.Name))?true:false;
+                this.error2_lb.Visible = (_contractor.NipNumber.Length != 10) ? true : false;
+
+
             }
             else
             {
-                _crudService.EditContractor(_contractor);
-                this.Close();
+                if (_windowType == WindowType.Add)
+                {
+                    if (_crudService.AddContractor(_contractor))
+                    {
+                        this.Close();
+                       
+                    }
+        
+                }
+                else
+                {
+                    _crudService.EditContractor(_contractor);
+                    this.Close();
+                }
             }
+
+
+            
         }
 
         private void AddEditWindow_Load(object sender, EventArgs e)
@@ -63,6 +78,7 @@ namespace ContractorCRUDapp
             this.details_textBox.Text = _contractor.Details;
             this.active_checkBox.Checked = _contractor.IsActive;
             this.type_comboBox.SelectedItem = collection.FirstOrDefault(t => t.Id == _contractor.ContractorTypeId).Type;
+
         }
 
         private void AddEditWindow_FormClosed(object sender, FormClosedEventArgs e)
@@ -70,9 +86,94 @@ namespace ContractorCRUDapp
             _update();
         }
 
-        private void delete_button_Click_Click(object sender, EventArgs e)
+        private void textBox_KeyDown(object sender, KeyEventArgs e)
         {
+            TextBox tb = sender as TextBox;
+            Label error_lb = new Label();
 
+            if (tb == name_textBox)
+                error_lb = this.error1_lb;
+            else if (tb == nipNumber_textBox)
+                error_lb = this.error2_lb;
+            else if (tb == details_textBox)
+                error_lb = this.error3_lb;
+
+
+            if ((tb.Text.Length == tb.MaxLength))
+            {
+                error_lb.Visible = true;
+            }
+            
+        }
+
+        private void textBox_TextChanged(object sender, EventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+            Label error_lb = new Label();
+
+            if (tb == name_textBox)
+                error_lb = this.error1_lb;
+            else if (tb == nipNumber_textBox)
+                error_lb = this.error2_lb;
+            else if (tb == details_textBox)
+                error_lb = this.error3_lb;
+
+            if(tb == nipNumber_textBox)
+            {
+                if (tb.Text.Length != tb.MaxLength)
+                {
+                    error_lb.Visible = true;
+                }
+                else
+                {
+                    error_lb.Visible = false;
+                }
+            }
+            else
+            {
+                if (tb.Text.Length < tb.MaxLength)
+                {
+                    error_lb.Visible = false;
+                }
+            }
+
+            
+            
+    
+        }
+        private void textBox_Leave(object sender, EventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+            Label error_lb = new Label();
+
+            if (tb == name_textBox)
+                error_lb = this.error1_lb;
+            else if (tb == nipNumber_textBox)
+                error_lb = this.error2_lb;
+            else if (tb == details_textBox)
+                error_lb = this.error3_lb;
+
+            if (tb == nipNumber_textBox)
+            {
+                if (tb.Text.Length == tb.MaxLength)
+                {
+                    error_lb.Visible = false;
+                }
+            }
+            else
+            {
+                if (tb.Text.Length <= tb.MaxLength)
+                {
+                    error_lb.Visible = false;
+                }
+                else
+                {
+                    error_lb.Visible = true;
+                }
+            }
+
+            
+            
         }
     }
 }
